@@ -35,4 +35,3 @@ assert solution3([8,9,0], 4) == [0,8,9]
 assert solution3([1,2,3,4,5], 9) == [2,3,4,5,1]
 assert solution3([1,1,2,3,5], 42) == [3,5,1,1,2] # codility failed test
 assert solution3([3,8,9,7,6], 3) == [9,7,6,3,8]
-

@@ -5,5 +5,5 @@
 - modulo works as everywhere: `4 % 3 = 1`
 - to append item to a list you should call `list.append(...)`
 - tertiary looks like `x = 1 if True else 2`
-
 - list comprehension is a powerful thing. `[0:2]` will take elements 0,1 and `[2:]` will take 2,3 if the array has 4 elements
+- `math.ceil` is used for rounding up
