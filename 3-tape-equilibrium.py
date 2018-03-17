@@ -8,6 +8,7 @@ def solution(arr):
   backward = 0
 
   for index in range(0, diff_len):
+    reverse_index = diff_len - index - 1
     forward += arr[index]
     backward += arr[diff_len - index]
 
@@ -18,14 +19,16 @@ def solution(arr):
       if diffs[index] < smallest:
         smallest = diffs[index]
 
-    if diffs[diff_len - index - 1] is None:
-      diffs[diff_len - index - 1] = backward
+    if diffs[reverse_index] is None:
+      diffs[reverse_index] = backward
     else:
-      diffs[diff_len - index - 1] = abs(diffs[diff_len - index - 1] - backward)
-      if diffs[diff_len - index - 1] < smallest:
-        smallest = diffs[diff_len - index - 1]
+      diffs[reverse_index] = abs(diffs[reverse_index] - backward)
+      if diffs[reverse_index] < smallest:
+        smallest = diffs[reverse_index]
 
   return smallest
+
+
 
 print(solution([1,1]))
 assert solution([1,1]) == 0
