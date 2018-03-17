@@ -11,17 +11,23 @@ def solution(arr):
     forward += arr[index]
     backward += arr[diff_len - index]
 
-    if index < diff_len / 2:
+    if diffs[index] is None:
       diffs[index] = forward
-      diffs[diff_len - index - 1] = backward
     else:
       diffs[index] = abs(diffs[index] - forward)
-      diffs[diff_len - index - 1] = abs(diffs[diff_len - index - 1] - backward)
       if diffs[index] < smallest:
         smallest = diffs[index]
+
+    if diffs[diff_len - index - 1] is None:
+      diffs[diff_len - index - 1] = backward
+    else:
+      diffs[diff_len - index - 1] = abs(diffs[diff_len - index - 1] - backward)
       if diffs[diff_len - index - 1] < smallest:
         smallest = diffs[diff_len - index - 1]
 
   return smallest
 
+print(solution([1,1]))
+assert solution([1,1]) == 0
 print(solution([3,1,2,4,3]))
+assert solution([3,1,2,4,3]) == 1
