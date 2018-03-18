@@ -1,18 +1,17 @@
 def solution(count, ops):
   counters = [0] * count
   largest = 0
-  all_equal = True
+  prev_op = None
 
   for op in ops:
     if op == count + 1:
-      if all_equal is False:
+      if prev_op != op:
         counters = [largest] * count
-        all_equal = True
     else:
       counters[op-1] += 1
-      all_equal = False
       if largest < counters[op-1]:
         largest = counters[op-1]
+    prev_op = op
 
   return counters
 

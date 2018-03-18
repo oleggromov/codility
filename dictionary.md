@@ -15,3 +15,9 @@
 
 ### dictionaries
 - `dict.keys()` returns list of keys of a dictionary
+
+## 2018-03-18
+
+### time complexity
+
+In `4-max-counters.py` test cases define everything. Although, consequtive "max" operations are pointless, lack of algorithm optimization to handle this case, which is done by reducing all these operations to a single one, is a path to increased time complexity and tests failure.
