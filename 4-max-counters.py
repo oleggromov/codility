@@ -4,7 +4,9 @@ def solution(count, ops):
 
   for op in ops:
     if op == count + 1:
-      counters = [largest] * count
+      # this is even worse than counters = [largest] * count
+      for i in range(0, len(counters)):
+        counters[i] = largest
     else:
       counters[op-1] += 1
       if largest < counters[op-1]:
